@@ -9,4 +9,4 @@ const homeHandler: FunctionType = (req, res, next) => {
 /* GET home page. */
 router.get("/", homeHandler);
 
-module.exports = router;
+export default router;

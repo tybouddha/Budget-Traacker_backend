@@ -5,8 +5,8 @@ import FunctionType from "../types/functionType";
 import User from "../models/user";
 import UserType from "../types/userType";
 import checkBody from "../modules/checkbody";
-import { uid2 } from "uid2";
-import { bcrypt } from "bcrypt";
+import uid2 from "uid2";
+import bcrypt from "bcrypt";
 
 const getUser: FunctionType = (req, res, next) => {
   res.send("respond with a resource");
@@ -49,7 +49,7 @@ const postNewUser: FunctionType = async (req, res, next) => {
       token: savedUser.token,
       message: "Compte enregistré avec succès",
     });
-  } catch (err) {
+  } catch (err: any) {
     console.log(err.message);
     return res.json({ result: false, error: "Erreur interne du serveur." });
   }
